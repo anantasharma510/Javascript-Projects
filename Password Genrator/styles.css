@@ -1,0 +1,166 @@
+/* Basic reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    background: radial-gradient(circle, #e0e0e0, #ffffff);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Container hover effect */
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading styling */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h1 span {
+    color: #007bff;
+    font-weight: bold;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 5px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    margin: 10px auto;
+    border-radius: 2px;
+    animation: slideIn 1s ease-out;
+}
+
+/* Animation for the underline effect */
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60px;
+    }
+}
+
+/* Display styling */
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Input styling */
+input[type="text"] {
+    font-size: 1.2rem;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Image styling */
+img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.2) rotate(10deg);
+    filter: brightness(1.2) saturate(1.2);
+}
+
+/* Button styling */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* Button hover effect */
+button:hover {
+    background: linear-gradient(45deg, #0056b3, #003d7a);
+    transform: translateY(-3px);
+}
+
+/* Button active effect */
+button:active {
+    background: linear-gradient(45deg, #003d7a, #00274d);
+    transform: translateY(1px);
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    input[type="text"] {
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
